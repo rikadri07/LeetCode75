@@ -1,0 +1,12 @@
+class Solution:
+    def maxProfit(self, prices):
+        # Initialize min_price to infinity
+        min_price, max_profit = float('inf'), 0
+        # Iterate through each price in the prices list
+        for price in prices:
+            # Update min_price to be the minimum of min_price and the current price
+            min_price = min(min_price, price)
+            # Update max_profit to be the maximum of max_profit and the difference between the current price and min_price
+            max_profit = max(max_profit, price - min_price)
+        # Return the final max_profit
+        return max_profit
